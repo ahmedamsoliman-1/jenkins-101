@@ -9,6 +9,8 @@ pipeline {
                 echo "Building.."
                 sh '''
                 cd myapp
+                sudo yum update
+                python3 get-pip.py --user
                 pip install -r requirements.txt
                 '''
             }
