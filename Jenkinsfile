@@ -1,4 +1,12 @@
 pipeline {
+    agent { 
+        node {
+            label 'any'
+            }
+      }
+      triggers {
+        pollSCM '* * * * *'
+    }
     stages {
         stage('Build') {
             steps {
